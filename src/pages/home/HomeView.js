@@ -34,6 +34,10 @@ const useStyles = createUseStyles({
   },
   menuComponent: {
     color: "black"
+  },
+  icon: {
+    height: 35,
+    width: 35
   }
 });
 const useGlobalStyles = createUseStyles(globalStyles);
@@ -41,7 +45,6 @@ const useGlobalStyles = createUseStyles(globalStyles);
 const HomeView = props => {
   const classes = useStyles();
   const styles = useGlobalStyles();
-  console.log(props.location);
 
   const switchContent = () => {
     switch (props.location.hash) {

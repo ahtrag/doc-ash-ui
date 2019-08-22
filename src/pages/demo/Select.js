@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
 import ReactCodeSnippet from "react-code-snippet";
 import Select from "../../components/Select";
-import AccountIcon from "mdi-react/AccountIcon";
-import EyeIcon from "mdi-react/EyeIcon";
 
 const useStyles = createUseStyles({
   root: {
