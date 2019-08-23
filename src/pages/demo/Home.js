@@ -40,7 +40,7 @@ const Home = props => {
         Material-Ui Component from Google
       </p>
       <br />
-      <p>Created with React with Love ♥</p>
+      <p>Created using React with Love ♥</p>
     </div>
   );
 };
