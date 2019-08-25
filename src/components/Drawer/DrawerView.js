@@ -17,7 +17,7 @@ const useStyles = createUseStyles({
     minHeight: "100vh",
     display: "flex",
     outline: 0,
-    overflowY: "scro;;",
+    overflowY: "auto",
     flexDirection: "column",
     boxSizing: "inherit",
     transition: "transform 225ms cubic-bezier(0, 0, 0.2, 1) 0ms",

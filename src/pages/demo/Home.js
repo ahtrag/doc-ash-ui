@@ -6,7 +6,7 @@ const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    color: "white",
+    color: "black",
     flexDirection: "column",
     margin: "50px"
   }
@@ -21,14 +21,14 @@ const Home = props => {
       <p>
         This repository created by{" "}
         <a
-          style={{ color: "white", fontWeight: 700 }}
+          style={{ color: "black", fontWeight: 700 }}
           href="https://github.com/sastrawanikadek"
         >
           Kadek Sastrawan
         </a>{" "}
         and{" "}
         <a
-          style={{ color: "white", fontWeight: 700 }}
+          style={{ color: "black", fontWeight: 700 }}
           href="https://github.com/ahtrag"
         >
           Gartha Prasidhiyanta

@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
     marginBottom: 4,
     display: "inline-flex",
     position: "relative",
-    borderBottom: "1px solid #ddd"
+    borderBottom: "1px solid #8D8A8A"
   },
   inputLabel: {
     position: "absolute",
@@ -52,6 +52,9 @@ const useStyles = createUseStyles({
   },
   fullWidth: {
     width: "100%"
+  },
+  noMargin: {
+    margin: 0
   }
 });
 
@@ -67,7 +70,8 @@ const TextInputDefault = props => {
     className,
     style,
     onChange,
-    fullWidth
+    fullWidth,
+    noMargin
   } = props;
   const [focus, setFocus] = useState(extra && extra.start ? true : false);
   const classes = useStyles();
@@ -79,7 +83,7 @@ const TextInputDefault = props => {
     <div
       className={`${classes.inputWrapper}${
         fullWidth ? ` ${classes.fullWidth}` : ""
-      }`}
+      }${noMargin ? ` ${classes.noMargin}` : ""}`}
     >
       {extra && extra.start && (
         <div className={classes.extraStart}>{extra.start}</div>
@@ -117,7 +121,7 @@ TextInputDefault.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
-  type: PropTypes.oneOf(["text", "email", "password"]),
+  type: PropTypes.oneOf(["text", "email", "password", "number", "tel"]),
   extra: PropTypes.shape({
     start: PropTypes.element,
     end: PropTypes.element
@@ -125,7 +129,8 @@ TextInputDefault.propTypes = {
   className: PropTypes.string,
   style: PropTypes.object,
   onChange: PropTypes.func,
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+  noMargin: PropTypes.bool
 };
 
 export default TextInputDefault;

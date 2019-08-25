@@ -1,6 +1,7 @@
 import React from "react";
 import { globalStyles } from "../../utils/styles";
 import { createUseStyles } from "react-jss";
+import { Link } from "react-router-dom";
 
 //Icon
 import GithubCircleIcon from "mdi-react/GithubCircleIcon";
@@ -27,6 +28,7 @@ import SelectComponent from "../demo/Select";
 import SwitchComponent from "../demo/Switch";
 import TextInputComponent from "../demo/TextInput";
 import TooltipComponent from "../demo/Tooltip";
+import TableComponent from "../demo/Table";
 
 const useStyles = createUseStyles({
   github: {
@@ -38,6 +40,9 @@ const useStyles = createUseStyles({
   icon: {
     height: 35,
     width: 35
+  },
+  title: {
+    color: "white"
   }
 });
 const useGlobalStyles = createUseStyles(globalStyles);
@@ -78,6 +83,8 @@ const HomeView = props => {
         return <TextInputComponent />;
       case "#/Tooltip":
         return <TooltipComponent />;
+      case "#/Table":
+        return <TableComponent />;
       default:
         return <Home />;
     }
@@ -86,8 +93,13 @@ const HomeView = props => {
   return (
     <div className={styles.posRelative}>
       <AppDrawer
+        isOpen
         showMenu
-        title="Ash-Ui"
+        title={
+          <Link to="/" className={classes.title}>
+            Ash-Ui
+          </Link>
+        }
         profile={
           <Tooltip label="Our Github">
             <IconButton
@@ -104,9 +116,8 @@ const HomeView = props => {
       >
         <Paper
           style={{
-            height: "100vh",
             width: "100%",
-            background: "linear-gradient(to right, #3f4c6b, #606c88)"
+            background: "white"
           }}
         >
           {switchContent()}
@@ -180,6 +191,11 @@ const menus = [
   {
     label: "Tooltip",
     to: "#/Tooltip",
+    divider: false
+  },
+  {
+    label: "Table",
+    to: "#/Table",
     divider: false
   }
 ];

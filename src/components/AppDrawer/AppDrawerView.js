@@ -4,7 +4,6 @@ import { createUseStyles } from "react-jss";
 import IconButton from "../IconButton/IconButtonView";
 import Drawer from "../Drawer/DrawerView";
 import MenuIcon from "mdi-react/MenuIcon";
-import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -51,10 +50,6 @@ const useStyles = createUseStyles({
   content: {
     display: "flex",
     margin: "24px"
-  },
-  link: {
-    textDecoration: "none",
-    color: "white"
   }
 });
 
@@ -87,7 +82,7 @@ const AppDrawerView = props => {
 
   return (
     <div className={classes.root}>
-      {showMenu && menuList ? (
+      {showMenu ? (
         <Drawer
           isOpen={state.isOpen}
           onClose={() => setState({ ...state, isOpen: false })}
@@ -109,9 +104,7 @@ const AppDrawerView = props => {
                 <MenuIcon />
               </IconButton>
             ) : null}
-            <Link to="/" className={classes.link}>
-              <h2>{title}</h2>
-            </Link>
+            <h2>{title}</h2>
           </div>
           <div>{profile}</div>
         </div>
@@ -130,12 +123,17 @@ AppDrawerView.propTypes = {
   /**
    * AppBar title isRequired
    */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 
   /**
    * AppBar profile
    */
-  profile: PropTypes.any,
+  profile: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+
+  /**
+   * Show menu drawer
+   */
+  showMenu: PropTypes.bool,
 
   /**
    * Override default styles with className

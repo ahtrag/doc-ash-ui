@@ -49,7 +49,7 @@ const useStyles = createUseStyles({
     margin: 0,
     padding: "16px 24px",
     boxSizing: "inherit",
-    display: "block",
+    display: "flex",
     color: "rgba(0,0,0,0.87)"
   },
   modalBody: {
@@ -57,7 +57,7 @@ const useStyles = createUseStyles({
     padding: "8px 24px",
     overflow: "auto",
     boxSizing: "inherit",
-    display: "block"
+    display: "flex"
   },
   modalFooter: {
     flex: "0 0 auto",
@@ -117,7 +117,7 @@ ModalView.propTypes = {
   ]).isRequired,
 
   /**
-   * Header of Modal
+   * Footer of Modal
    */
   footer: PropTypes.oneOfType([
     PropTypes.string,
@@ -126,7 +126,7 @@ ModalView.propTypes = {
   ]),
 
   /**
-   * Function onClick open modal
+   * Flag of showing modal
    */
   show: PropTypes.bool,
 

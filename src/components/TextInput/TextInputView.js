@@ -19,6 +19,7 @@ const TextInputView = props => {
 TextInputView.defaultProps = {
   variant: "default",
   fullWidth: false,
+  noMargin: false,
   type: "text"
 };
 
@@ -61,7 +62,7 @@ TextInputView.propTypes = {
    * 2. email
    * 3. password
    */
-  type: PropTypes.oneOf(["text", "email", "password"]),
+  type: PropTypes.oneOf(["text", "email", "password", "number", "tel"]),
 
   /**
    * Add object of element in the start and end of TextInput
@@ -89,7 +90,13 @@ TextInputView.propTypes = {
   /**
    * fullWidth enabled, default : false
    */
-  fullWidth: PropTypes.bool
+  fullWidth: PropTypes.bool,
+
+  /**
+   * Show TextInput without margin-top and margin-bottom
+   * @defaultValue false
+   */
+  noMargin: PropTypes.bool
 };
 
 export default TextInputView;
